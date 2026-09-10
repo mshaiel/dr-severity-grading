@@ -1,0 +1,7 @@
+name: "efficientnet_b3"
+backbone: "efficientnet_b3"
+pretrained: true
+image_size: 380
+drop_rate: 0.3
+drop_path_rate: 0.2
+num_classes: 5

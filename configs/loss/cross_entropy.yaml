@@ -1,0 +1,3 @@
+name: "cross_entropy"
+use_class_weights: true
+label_smoothing: 0.0

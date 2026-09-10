@@ -1,0 +1,18 @@
+program: scripts/train.py
+method: bayes
+metric:
+  name: val/qwk
+  goal: maximize
+parameters:
+  training.lr:
+    distribution: log_uniform_values
+    min: 1.0e-5
+    max: 1.0e-3
+  loss:
+    value: coral
+  model:
+    value: efficientnet_b0
+  training.epochs:
+    value: 30
+  training.batch_size:
+    value: 32

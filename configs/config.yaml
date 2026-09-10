@@ -1,0 +1,28 @@
+defaults:
+  - _self_
+  - model: efficientnet_b0
+  - loss: coral
+  - data: aptos
+  - training: ordinal
+
+seed: 42
+experiment_name: "dr_experiment"
+output_dir: "outputs/${now:%Y-%m-%d_%H-%M-%S}"
+
+wandb:
+  enabled: true
+  project: "dr-severity-grading"
+  entity: null
+  name: "${model.name}_${loss.name}_seed${seed}"
+  tags: ["aptos", "${model.name}", "${loss.name}"]
+
+inference:
+  tta: false
+  checkpoint_path: null
+
+hydra:
+  run:
+    dir: ${output_dir}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}

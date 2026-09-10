@@ -1,0 +1,22 @@
+epochs: 30
+optimizer: "adamw"
+lr: 3.0e-4
+weight_decay: 1.0e-4
+scheduler: "cosine_warm_restarts"
+t_0: 10
+t_mult: 1
+min_lr: 1.0e-6
+gradient_clip_val: 1.0
+
+early_stopping:
+  patience: 7
+  metric: "val/qwk"
+  mode: "max"
+  min_delta: 0.001
+
+checkpoint:
+  save_top_k: 1
+  monitor: "val/qwk"
+  mode: "max"
+  dirpath: "checkpoints"
+  filename: "ce_baseline_best.pth"

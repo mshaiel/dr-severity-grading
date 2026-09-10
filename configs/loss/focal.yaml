@@ -1,0 +1,5 @@
+name: "focal"
+gamma: 2.0
+alpha: null  # or list of per-class alpha weights
+use_class_weights: true
+reduction: "mean"

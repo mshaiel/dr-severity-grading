@@ -1,0 +1,4 @@
+name: "coral"
+num_classes: 5
+reduction: "mean"
+importance_weights: null  # Optional lambda_k weights per threshold
